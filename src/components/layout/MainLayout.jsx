@@ -7,7 +7,7 @@ import { useState } from 'react';
 function MainLayout() {
     const [active, setActive] = useState(false)
     return (
-        <div className={ `container ${active ? 'active' : ''} ` }>
+        <div className={ `app-container ${active ? 'active' : ''} ` }>
             <Header
                 active={ active }
                 setActive={ setActive }

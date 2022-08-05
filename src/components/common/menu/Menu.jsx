@@ -7,18 +7,18 @@ function Menu({ active, setActive }) {
 
   useEffect(() => {
     setActive(false);
-  }, [location])
+  }, [location, setActive])
 
   return (
     <ul className={ `menu ${active ? 'active' : ''}` }>
       <li>
-        <Link to='/'>Home</Link>
+        <Link to='/'>About me</Link>
       </li>
       <li>
-        <Link to='/service'>Service</Link>
+        <Link to='/experience'>Experience</Link>
       </li>
       <li>
-        <Link to='/contact'>Contact</Link>
+        <Link to='/projects'>Projects</Link>
       </li>
     </ul>
   )

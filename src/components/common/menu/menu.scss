@@ -49,3 +49,12 @@
     margin-top: 1rem;
   }
 }
+
+@media (max-width: 376px) {
+  .menu {
+    width: 30%;
+  }
+  .menu li a {
+    font-size: 18px;
+  }
+}
