@@ -45,15 +45,15 @@ function ContactInfo() {
           </div>
           <div className="col-span-12 xl:col-span-7">
             <h2 className="text-xl sm:text-3xl font-bold mb-4">Summary</h2>
-            <p className="leading-9 text-sm sm:text-xl">
-              I'm a third-year student at University of Information and
+            <p className="text-sm leading-8 sm:text-xl sm:leading-9">
+              I'm a last-year student at University of Information and
               Technology with 2 years learning by myself and half of year
               working experience as part-time front-end dev, I have planned and
               built some projects to improve my experience. With the knowledge I
               have learned along with creativity, I hope to contribute to the
               development of your company.
             </p>
-            <ul className="flex mt-6 items-center">
+            <ul className="flex mt-6 items-center justify-center xl:justify-start">
             <li className="mx-3">
               <a
                 href="https://github.com/VinhTruong2001"

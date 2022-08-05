@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { brands, solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function ShortInfo() {
   return (
@@ -57,6 +57,10 @@ function ShortInfo() {
               </a>
             </li>
           </ul>
+        </div>
+        {/* Scroll arrow */}
+        <div className="text-white text-5xl animate-bounce hidden xl:block mt-8">
+          <FontAwesomeIcon icon={solid("angles-down")} />
         </div>
       </div>
     </div>
