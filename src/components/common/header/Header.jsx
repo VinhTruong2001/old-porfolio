@@ -9,9 +9,9 @@ function Header({ active, setActive }) {
 					className={ `menu-toggle ${active ? 'active' : ''}` }
 					onClick={ () => setActive(!active) }
 				>
-					<div class={ `line first ${active ? 'active' : ''}` }></div>
-					<div class={ `line second ${active ? 'active' : ''}` }></div>
-					<div class={ `line third ${active ? 'active' : ''}` }></div>
+					<div className={ `line first ${active ? 'active' : ''}` }></div>
+					<div className={ `line second ${active ? 'active' : ''}` }></div>
+					<div className={ `line third ${active ? 'active' : ''}` }></div>
 				</div>
 			</div>
 		</div>

@@ -16,7 +16,9 @@ function MainLayout() {
                 <div className="main">
                     <div className="content">
                         <div className="overlay">
-                            <Outlet />
+                            <div className="absolute top-0 left-0 right-0">
+                                <Outlet />
+                            </div>
                         </div>
                     </div>
                 </div>

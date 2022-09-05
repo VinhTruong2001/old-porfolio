@@ -9,7 +9,6 @@
 .main {
   position: relative;
   z-index: 5;
-  overflow: hidden;
   transform-origin: left;
   transform-style: preserve-3d;
   transition: 0.5s ease-in-out;
@@ -21,18 +20,19 @@
 }
 
 .overlay {
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   left: 0;
   background-color: #181719;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .app-container.active .main {
+  overflow: hidden;
   animation: main-animation 0.5s ease-in-out;
   cursor: pointer;
   transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 767px) {
   .app-container.active .main-container::after {
     transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.5);
   }

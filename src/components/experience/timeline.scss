@@ -1,0 +1,167 @@
+$colors: #46b8e9,
+#3ee9d1,
+#ce43eb,
+#4d92eb;
+
+$items: 5;
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-radius: 16px;
+  }
+
+  &__container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -16px;
+      background-color: white;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+
+  &__header {
+    display: flex;
+    padding: 15px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+  }
+
+  &__index {
+    height: 70px;
+    min-width: 70px;
+    text-align: center;
+    line-height: 1;
+    margin-right: 8px;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.17);
+  }
+
+  .left {
+    left: 0;
+
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid;
+      border-width: 10px 0 10px 10px;
+    }
+  }
+
+  .right {
+    left: 50%;
+
+    &::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    &::after {
+      left: -9px;
+    }
+  }
+
+  &__content {
+    padding: 20px 30px;
+    background-color: white;
+    color: #000;
+    position: relative;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  @for $i from 1 through $items {
+    &--step#{$i} {
+      $color: nth($colors, ((($i - 1) % 4) + 1));
+      .timeline__header {
+        background-color: $color;
+        border-color: $color;
+      }
+      &.right::before {
+        border-color: transparent  $color transparent transparent;
+      }
+      &.left::before {
+        border-color: transparent transparent transparent $color;
+      }
+      &::after {
+        border: 4px solid $color;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    @for $i from 1 through $items {
+      &--step#{$i} {
+        $color: nth($colors, ((($i - 1) % 4) + 1));
+        &.left::before {
+          border-color: transparent  $color transparent transparent !important;
+        }
+        &::after {
+          border: 4px solid $color;
+        }
+      }
+    }
+
+    &::after {
+      left: 31px;
+    }
+  
+    &__container {
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 25px;
+
+      &::before {
+        border: medium solid;
+        border-width: 10px 10px 10px 0 !important;
+      }
+    }
+  
+    .left,
+    .right {
+      left: 6px
+    }
+
+    .left::after,
+    .right::after {
+      left: 15px;
+    }
+
+    .right::before,
+    .left::before {
+      left: 50px;
+    }
+  }
+}
